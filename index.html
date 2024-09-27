@@ -1,56 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Vue.js App</title>
-    <!-- This loads Vue.js -->
-    <script src="https://unpkg.com/vue@3"></script>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
-        text-align: center;
-        padding: 50px;
-      }
-      h1 {
-        color: #42b983;
-      }
-      button {
-        padding: 10px 20px;
-        background-color: #42b983;
-        border: none;
-        color: white;
-        cursor: pointer;
-        border-radius: 5px;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- This is where our Vue app will go -->
-    <div id="app">
-      <h1>{{ message }}</h1>
-      <button @click="changeMessage">Click me to change the message</button>
-    </div>
-
-    <script>
-      // This is our Vue.js app code
-      const app = Vue.createApp({
-        data() {
-          return {
-            message: 'Hello, Vue.js!'
-          }
-        },
-        methods: {
-          changeMessage() {
-            this.message = 'You clicked the button!'
-          }
-        }
-      });
-
-      // Mount Vue to the div with id="app"
-      app.mount('#app');
-    </script>
-  </body>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Simple Widget</title>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+            }
+            button {
+                padding: 10px 20px;
+                font-size: 16px;
+                margin-top: 20px;
+            }
+        </style>
+        <script type="text/javascript">
+            function changeText() {
+                document.getElementById('textDisplay').textContent = "You clicked the button! 🎉";
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Welcome to My Simple Widget!</h1>
+        <button onclick="changeText()">Click Me!</button>
+        <p id="textDisplay">This text will change when you click the button.</p>
+    </body>
 </html>
